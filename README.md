@@ -1,4 +1,4 @@
-# My Project
+# Task Manager
 
 This project consists of a backend powered by Hardhat for Ethereum smart contracts and a frontend React client. Follow the instructions below to get started.
 
@@ -40,7 +40,7 @@ Make sure you have the following installed:
     npx hardhat run scripts/deploy.js --network ganache
     ```
 
-    This will deploy the smart contracts to your local Ganache blockchain. Make sure to note down the contract address.
+    This will deploy the smart contracts to your local Ganache blockchain. Note down the contract address that is printed after deployment. You'll need this for the frontend.
 
 ### Frontend Setup
 
@@ -56,7 +56,27 @@ Make sure you have the following installed:
     npm install
     ```
 
-3. **Start the development server:**
+3. **Add the Contract Address to the Frontend:**
+
+    After deploying the contract, you need to add the contract address in the frontend code:
+
+    - **In `App.tsx`:**
+
+        Open the `src/App.tsx` file and locate the `CONTRACT_ADDRESS` constant. Replace `"YOUR_CONTRACT_ADDRESS_HERE"` with the actual contract address you noted earlier.
+
+        ```typescript
+        const CONTRACT_ADDRESS = "YOUR_CONTRACT_ADDRESS_HERE";
+        ```
+
+    - **In `CreateTask.tsx`:**
+
+        Similarly, open the `src/components/CreateTask.tsx` file and locate the `CONTRACT_ADDRESS` constant. Replace `"YOUR_CONTRACT_ADDRESS_HERE"` with the actual contract address.
+
+        ```typescript
+        const CONTRACT_ADDRESS = "YOUR_CONTRACT_ADDRESS_HERE";
+        ```
+
+4. **Start the development server:**
 
     ```bash
     npm run dev
@@ -64,7 +84,7 @@ Make sure you have the following installed:
 
     This will start the React development server on `http://localhost:3000`.
 
-4. **Build the frontend (optional):**
+5. **Build the frontend (optional):**
 
     If you want to create a production build, run:
 
